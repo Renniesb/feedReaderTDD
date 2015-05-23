@@ -99,7 +99,7 @@ $(function() {
          */
 
         beforeEach(function(done) {
-            loadFeed(0, done);
+            loadFeed(0, done); //test with starting feed
 
         });
 
@@ -114,4 +114,19 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+    describe('New Feed Selection', function(){
+        var currentTitle = $('.header-title').html();
+        beforeEach(function(done) {
+            loadFeed(1, done); //load a different feed
+
+        });
+
+        afterEach(function(done){
+            loadFeed(0, done); //return to original feed after content change has been tested.
+        })
+
+        it('content changes when new feed is loaded', function(){
+            expect($('.header-title').html()).not.toBe(currentTitle);//test with a change in the header text
+        });
+    });
 }());
