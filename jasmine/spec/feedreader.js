@@ -123,7 +123,7 @@ $(function() {
 
         afterEach(function(done){
             loadFeed(0, done); //return to original feed after content change has been tested.
-        })
+        });
 
         it('content changes when new feed is loaded', function(){
             expect($('.header-title').html()).not.toBe(currentTitle);//test with a change in the header text
