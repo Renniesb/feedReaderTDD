@@ -35,10 +35,10 @@ $(function() {
         it('each feed has a url', function(){
 
             for (var i = 0; i < allFeeds.length; i++) {
-                url = allFeeds[i].url;
-                expect(url).toBeDefined();
-                expect(url.length).not.toBe(0);
-            };
+                url = allFeeds[i].url; //grabs the url attribute if there is one
+                expect(url).toBeDefined(); //checks if the url attribute is defined.
+                expect(url.length).not.toBe(0); //checks to see if the url attribute contains a value in it's length property.
+            }
 
         });
 
@@ -49,10 +49,10 @@ $(function() {
         it('each feed has a name', function(){
 
             for (var i = 0; i < allFeeds.length; i++) {
-                name = allFeeds[i].name;
-                expect(name).toBeDefined();
-                expect(name.length).not.toBe(0);
-            };
+                name = allFeeds[i].name; //grabs the name attribute if there is one
+                expect(name).toBeDefined(); //checks if the name attribute is defined.
+                expect(name.length).not.toBe(0); //checks to see if the name attribute contains a value in it's length property.
+            }
 
         });
 
@@ -68,7 +68,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
             var body = $('body');
-
+        //test that checks for the menu-hidden attribute.
         it('Menu hidden by default', function(){
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
@@ -78,7 +78,10 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-        it('changes visibility of menu', function(){
+        it('changes visibility of menu on click of menu icon', function(){
+            /*call click twice on the menu icon link to toggle the
+            menu-hidden class on and off, this tests the changing visibility of the menu.
+            */
             var menuIcon = $('.menu-icon-link');
             menuIcon.click();
             expect(body.hasClass('menu-hidden')).not.toBe(true);
@@ -99,12 +102,12 @@ $(function() {
          */
 
         beforeEach(function(done) {
-            loadFeed(0, done); //test with starting feed
+            loadFeed(0, done); //test with the feed that's loaded at the beginning.
 
         });
 
         it('.entry element in the .feed container', function(){
-            expect($('.feed .entry').length).toBeGreaterThan(0);
+            expect($('.feed .entry').length).toBeGreaterThan(0); //check for entry in feed container with .length being greater than 0
         });
 
     });
@@ -117,7 +120,7 @@ $(function() {
     describe('New Feed Selection', function(){
         var currentTitle = $('.header-title').html();
         beforeEach(function(done) {
-            loadFeed(1, done); //load a different feed
+            loadFeed(1, done); //load a different feed than the original
 
         });
 
@@ -126,7 +129,7 @@ $(function() {
         });
 
         it('content changes when new feed is loaded', function(){
-            expect($('.header-title').html()).not.toBe(currentTitle);//test with a change in the header text
+            expect($('.header-title').html()).not.toBe(currentTitle); //test with a change in the header html
         });
     });
 }());

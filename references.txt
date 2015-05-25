@@ -11,3 +11,6 @@ https://github.com/jvojens2/frontend-nanodegree-feedreader
 
 jQuery .html() method
 http://api.jquery.com/html/
+
+Udacity Project 6 forum
+http://discussions.udacity.com/c/nd001-2014-11-05/project-6
