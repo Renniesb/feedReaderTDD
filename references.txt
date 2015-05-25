@@ -1,0 +1,13 @@
+#Project 6 Resources
+
+Introduction to Jasmine
+http://jasmine.github.io/2.1/introduction.html#section-5
+
+.click() jQuery documentation
+http://api.jquery.com/click/
+
+Fellow classmate Julian Farley's Project
+https://github.com/jvojens2/frontend-nanodegree-feedreader
+
+jQuery .html() method
+http://api.jquery.com/html/
